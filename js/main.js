@@ -80,49 +80,59 @@
 })(jQuery);
 
 
-// Gallary slider
+//open chat
 
-let circle = document.querySelector('.circle');
-let slider = document.querySelector('.slider');
-let list = document.querySelector('.list');
-let prev = document.getElementById('prev');
-let next = document.getElementById('next');
-let items = document.querySelectorAll('.list .item');
-let count = items.length;
-let active = 1;
-let leftTransform = 0;
-let width_item = items[active].offsetWidth;
+// JavaScript for opening, closing, and sending messages in the chat pop-up
 
-next.onclick = () => {
-    active = active >= count - 1 ? count - 1 : active + 1;
-    runCarousel();
+function openChat() {
+    document.getElementById("chatPopup").style.display = "block";
 }
-prev.onclick = () => {
-    active = active <= 0 ? active : active - 1;
-    runCarousel();
+  
+function closeChat() {
+    document.getElementById("chatPopup").style.display = "none";
 }
-function runCarousel() {
-    prev.style.display = (active == 0) ? 'none' : 'block';
-    next.style.display = (active == count - 1) ? 'none' : 'block';
-
-
-    let old_active = document.querySelector('.item.active');
-    if(old_active) old_active.classList.remove('active');
-    items[active].classList.add('active');
-
-     leftTransform = width_item * (active - 1) * -1;
-    list.style.transform = `translateX(${leftTransform}px)`;
+  
+function sendMessage() {
+    // Add your logic for sending messages here
+    var input = document.querySelector(".chat-footer input");
+    var message = input.value;
+    if (message.trim() !== "") {
+      var chatBody = document.querySelector(".chat-body");
+      var newMessage = document.createElement("div");
+      newMessage.classList.add("message");
+      newMessage.textContent = message;
+      chatBody.appendChild(newMessage);
+      input.value = "";
+    }
 }
-runCarousel();
+  
 
+/*--------------------services modal-----------*/
+const modalViews = document.querySelectorAll('.services_modal-content'),
+      modelBtns = document.querySelectorAll('.services_button-s'),
+      modalCloses = document.querySelectorAll('.services_modal-close'),
+      closeMdl = document.querySelectorAll('.close_modl')
 
-// Set Text on a Circle
-let textCircle = circle.innerText.split('');
-circle.innerText = '';
-textCircle.forEach((value, key) => {
-    let newSpan =  document.createElement("span");
-    newSpan.innerText = value;
-    let rotateThisSpan = (360 / textCircle.length) * (key + 1);
-    newSpan.style.setProperty('--rotate', rotateThisSpan + 'deg');
-    circle.appendChild(newSpan); 
-});
+let modal = function(modalClick) {
+    modalViews[modalClick].classList.add('active-modal')
+}
+
+modelBtns.forEach((modelBtn, i) => {
+    modelBtn.addEventListener('click', () =>{
+        modal(i)
+    })
+})
+closeMdl.forEach((modelLink, i) => {
+    modelLink.addEventListener("click", () => {
+        modalViews.forEach((modalView) => {
+            modalView.classList.remove('active-modal')
+        })
+    })
+})
+modalCloses.forEach((modalClose) => {
+    modalClose.addEventListener("click", () => {
+        modalViews.forEach((modalView) => {
+            modalView.classList.remove('active-modal')
+        })
+    })
+})
