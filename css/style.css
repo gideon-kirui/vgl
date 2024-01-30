@@ -1353,8 +1353,8 @@ padding-right: 2rem;
 @media (max-width: 500px) {
     .chat-popup {
         top: 15%;
-        
-        width: 300px;
+        left: 5%;
+        width: 90%;
         margin: auto;
     }
 }
