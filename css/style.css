@@ -779,8 +779,13 @@
     margin-bottom: 10px;
     line-height: 25px;
 }
-.services_modal-content .button{
+.services_modal-content button{
     margin-left: 40%;
+    background-color: #45dfd7;
+    border-radius: 10px;
+}
+.services_modal-content button a{
+    color: white;
 }
 .services_modal-services{
     row-gap: 5px;
@@ -809,6 +814,136 @@
     .services_modal-description{
         padding: 0 1rem;
         line-height: 15px;
+    }
+}
+
+/** Software Page ***/
+/** Software projects **/
+.work_filters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .75rem;
+    margin-bottom: 2rem;
+}
+.tab-class{
+    margin-bottom: 20px;
+}
+.work_container{
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.s-nav .active{
+    background-color: #007bff;
+    color: #ffffff;
+}
+.work_item{
+    cursor: pointer;
+    color: #b07800;
+    padding: .25rem .75rem;
+    font-weight: 700;
+    border-radius: .5rem;
+}
+.work_card{
+    width: fit-content;
+    background-color: #e5f5fa;
+    padding: 1.25rem;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+    margin: 10px auto;
+    text-align: left;
+}
+.work_img{
+    width: 300px;
+    height: 200px;
+    border-radius: .5rem;
+    margin-bottom: 10px;
+}
+.work_title{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-5);
+}
+.work_button{
+    color: #b07800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+    cursor: pointer;
+}
+
+/*------------------Work popup design-------------*/
+.workpopup-card{
+    position: fixed;
+    visibility: hidden;
+    width: 35%;
+    background-color: #e5f5fa;
+    padding: 1%;
+    left: 10%;
+    top: -100%;
+    opacity: 0;
+    z-index: 1500;
+    border-radius: 20px;
+    transform: scale(1.25);
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+}
+.workpopup-card-active{
+    left: 35%;
+    top: 16%;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+}
+.seedt-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 26px;
+    color: rgb(248, 1, 1);
+    cursor: pointer;
+    padding: 2px 5px;
+}
+.work-card-desc{
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+.work-info{
+    margin-top: 5%;
+}
+.work-info p{
+    font-size: 15px;
+}
+
+.work-info h4 a{
+    font-size: 12px;
+    text-decoration: none;
+    color: rgb(31, 154, 255);
+}
+@media (max-width: 500px) {
+    .work_img{
+        width: 250px;
+    }
+    .workpopup-card{
+        width: 80%;
+        margin: auto;
+    }
+    .workpopup-card-active{
+        left: unset;
+    }
+    .work-info p{
+        font-size: 12px;
     }
 }
 /*** Category ***/
@@ -1194,19 +1329,22 @@ padding-right: 2rem;
 }
   
 .chat-footer {
-    padding: 10px;
+    width: 95%;
+    padding: 5px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
   
-input {
-    flex: 1;
-    padding: 8px;
+.chat-footer .inpt{
+    width: 100px;
+    padding: 2px;
+    margin-left: 10px;
 }
   
-button {
-    padding: 8px;
-    background-color: #4CAF50;
+.chat-footer button {
+    padding: 3px;
+    background-color: #3eaff0;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -1216,7 +1354,30 @@ button {
     .chat-popup {
         top: 15%;
         left: 2%;
+        width: 300px;
     }
+}
+.rpls-bd{
+    padding: 5px;
+}
+.rpls-bd .othrpl{
+    font-size: 11px;
+    width: 150px;
+    background-color: #e5f5fa;
+    border-top-right-radius: 20px;
+    padding: 10px;
+    border-bottom-left-radius: 20px;
+    margin-bottom: 10px;
+}
+.rpls-bd .usrpl{
+    font-size: 11px;
+    width: 150px;
+    background-color: #e5f5fa;
+    border-top-right-radius: 20px;
+    float: right;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom-left-radius: 20px;
 }
 
 /** board of directors ***/

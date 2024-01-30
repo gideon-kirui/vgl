@@ -79,6 +79,8 @@
     
 })(jQuery);
 
+//open project details
+
 
 //open chat
 
@@ -90,20 +92,6 @@ function openChat() {
   
 function closeChat() {
     document.getElementById("chatPopup").style.display = "none";
-}
-  
-function sendMessage() {
-    // Add your logic for sending messages here
-    var input = document.querySelector(".chat-footer input");
-    var message = input.value;
-    if (message.trim() !== "") {
-      var chatBody = document.querySelector(".chat-body");
-      var newMessage = document.createElement("div");
-      newMessage.classList.add("message");
-      newMessage.textContent = message;
-      chatBody.appendChild(newMessage);
-      input.value = "";
-    }
 }
   
 
@@ -136,3 +124,12 @@ modalCloses.forEach((modalClose) => {
         })
     })
 })
+
+const openProfile = document.querySelector('.workpopup-card');
+
+function openProprofile(){
+    openProfile.classList.add('workpopup-card-active')
+}
+function closeProprofile(){
+    openProfile.classList.remove('workpopup-card-active')
+}
