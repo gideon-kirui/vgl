@@ -814,6 +814,7 @@ body{
         width: 90%;
         left: unset;
         padding: 3rem 2rem 2rem;
+        margin: auto;
     }
     .services_modal-description{
         padding: 0 1rem;
@@ -942,11 +943,12 @@ body{
         width: 250px;
     }
     .workpopup-card{
-        width: 80%;
+        width: 90%;
         margin: auto;
     }
     .workpopup-card-active{
         left: unset;
+        margin: auto;
     }
     .work-info p{
         font-size: 12px;
